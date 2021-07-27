@@ -11,7 +11,8 @@ class hashMap:
 
     """Right now each packageID is just 1,2,3,4,5. add better hash function"""
     def makeHash(self, key):
-        return int(key - 1)
+        hashKey = int(key) - 1
+        return hashKey
 
 
     def insert(self, key, value):
