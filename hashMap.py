@@ -9,10 +9,16 @@ class hashMap:
         self.map = [None] * self.size
 
 
+
+
+
     """Right now each packageID is just 1,2,3,4,5. add better hash function"""
     def makeHash(self, key):
         hashKey = int(key) - 1
         return hashKey
+
+
+
 
 
     def insert(self, key, value):
@@ -27,6 +33,9 @@ class hashMap:
             print("Ohh shit. How did that happen? This is 1 to 1")
             #update with collision correction
             return False
+
+
+
 
 
     def lookUp(self, key):
