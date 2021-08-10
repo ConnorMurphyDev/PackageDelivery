@@ -3,6 +3,7 @@
 
 import csv
 from hashMap import hashMap
+import package
 
 packageFile = "packageFile.csv"
   
@@ -44,10 +45,20 @@ def populateHashMap():
     newHashMap = hashMap()
 
     while i < rowCount - 1:
-        newHashMap.insert(rows[i][0], rows[i])
+
+        tempPackage = package
+        tempPackage.packageID = rows[i][0]
+        tempPackage.address = rows[i][1]
+        tempPackage.city = rows[i][2]
+        tempPackage.state = rows[i][3]
+        tempPackage.zipcode = rows[i][4]
+        tempPackage.deliveryDeadline = rows[i][5]
+        tempPackage.weight = rows[i][6]
+        tempPackage.specialNotes = rows[i][7]
+
+
+
+        newHashMap.insert(tempPackage.packageID, tempPackage)
         i +=1
     
     return newHashMap
-
-
-

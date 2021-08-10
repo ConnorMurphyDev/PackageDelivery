@@ -14,13 +14,8 @@ import package
 
 
 
-testPackage = package
 
-testPackage.packageID = 1
-testPackage.address = "butts"
-testPackage.weight = 5
 
-print(testPackage)
 
 
 """

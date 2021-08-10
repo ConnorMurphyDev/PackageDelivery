@@ -2,6 +2,7 @@
 # Referencing this:
 # https://www.youtube.com/watch?v=9HFbhPscPU0
 
+import package
 
 class hashMap:
     def __init__(self):
@@ -21,9 +22,9 @@ class hashMap:
 
 
 
-    def insert(self, key, value):
+    def insert(self, key, package):
         hashKey = self.makeHash(key)
-        hashValue = [key, value]
+        hashValue = [key, package]
 
         if self.map[hashKey] is None:
             #self.map[hashKey] = list([hashValue])
