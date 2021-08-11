@@ -43,22 +43,25 @@ def populateHashMap():
     i = 0
 
     newHashMap = hashMap()
+    tempPackage = [None] * rowCount #new
+
+
 
     while i < rowCount - 1:
 
-        tempPackage = package
-        tempPackage.packageID = rows[i][0]
-        tempPackage.address = rows[i][1]
-        tempPackage.city = rows[i][2]
-        tempPackage.state = rows[i][3]
-        tempPackage.zipcode = rows[i][4]
-        tempPackage.deliveryDeadline = rows[i][5]
-        tempPackage.weight = rows[i][6]
-        tempPackage.specialNotes = rows[i][7]
+        tempPackage[i].append(package)
+        tempPackage[i].packageID = rows[i][0]
+        tempPackage[i].address = rows[i][1]
+        tempPackage[i].city = rows[i][2]
+        tempPackage[i].state = rows[i][3]
+        tempPackage[i].zipcode = rows[i][4]
+        tempPackage[i].deliveryDeadline = rows[i][5]
+        tempPackage[i].weight = rows[i][6]
+        tempPackage[i].specialNotes = rows[i][7]
 
 
 
-        newHashMap.insert(tempPackage.packageID, tempPackage)
+        newHashMap.insert(tempPackage[i].packageID, tempPackage[i])
         i +=1
     
     return newHashMap
