@@ -3,7 +3,7 @@
 
 
 
-class package:
+class Package:
     def __init__(self):
         self.packageID = None
         self.address = None

@@ -4,7 +4,7 @@
 
 import package
 
-class hashMap:
+class HashMap:
     def __init__(self):
         self.size = 40 #change this to be adaptive
         self.map = [None] * self.size

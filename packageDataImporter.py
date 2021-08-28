@@ -2,8 +2,8 @@
 # Reads package data from a CSV file and populates the hashmap
 
 import csv
-from hashMap import hashMap
-import package
+from hashMap import HashMap
+from package import Package
 
 packageFile = "packageFile.csv"
   
@@ -36,20 +36,20 @@ def readCSV():
 
 
 
-
+#Call this to populate the hasmap of packages
 def populateHashMap():
 
     rows, rowCount = readCSV()
     i = 0
 
-    newHashMap = hashMap()
+    newHashMap = HashMap()
     tempPackage = [None] * rowCount #new
 
 
 
     while i < rowCount - 1:
 
-        tempPackage[i].append(package)
+        tempPackage[i] = Package()
         tempPackage[i].packageID = rows[i][0]
         tempPackage[i].address = rows[i][1]
         tempPackage[i].city = rows[i][2]
