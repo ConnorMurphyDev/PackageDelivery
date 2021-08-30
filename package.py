@@ -13,6 +13,8 @@ class Package:
         self.deliveryDeadline = None
         self.weight = None
         self.specialNotes = None
+        self.deliveryTime = None
+        self.deliveryMiles = None
 
 
 

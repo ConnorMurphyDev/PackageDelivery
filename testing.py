@@ -1,3 +1,4 @@
+from timeStatus import deliveredAt, deliveryList, userInterface
 from hashMap import HashMap
 import csv
 import packageDataImporter
@@ -5,12 +6,12 @@ from graph import Vertex
 import package
 import cityDataImporter
 import truck
+from datetime import datetime, timedelta
 """ from <module> import <Class>  self notes. remove this later"""
 
 
 
 
-print("hello everyone")
 
 truck1, truck2, truck3 = truck.loadTrucks()
 
@@ -26,10 +27,32 @@ truck.decideRoute(truck2, testDistanceTable, testHashMap)
 truck.decideRoute(truck3, testDistanceTable, testHashMap)
 
 
+deliveredAt(testHashMap, truck1, truck2, truck3)
 
 
 
-print("butts")
+
+
+
+
+string = "08:55"
+
+userInterface(testHashMap, truck1, truck2, truck3)
+
+
+
+"""
+time = datetime.time
+
+time = timedelta(hours = 15)
+print(time)
+
+
+time =  time + timedelta(minutes = 45)
+print(time)
+
+print(time)
+"""
 #print(testHashMap)
 #print(testDistanceTable)
 
