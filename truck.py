@@ -31,7 +31,8 @@ def distanceBetween(package1, package2, distanceTable):
             package2Index = i
         i = i + 1
 
-    return distanceTable[package1Index][package2Index]
+    #Converted to float before sending out
+    return float(distanceTable[package1Index][package2Index])
 
 
 
@@ -46,13 +47,13 @@ def loadTrucks():
     #Truck 1 is the first to leave at 8am, while truck 2 waits for the late packages and leaves
     #at 9:05. Followed by truck 3 leaving after truck 1 returns. These packages were loaded
     #manually based of delivery requirements and relative location.
-    truck1.packages = [1, 13, 14, 15, 16, 19, 20, 21, 29, 30, 31, 32, 34, 37, 39]
+    truck1.packages = [1, 13, 14, 15, 16, 19, 20, 21, 29, 30, 31, 32, 34, 37, 39, 40]
     truck2.packages = [4, 6, 11, 17, 22, 23, 24, 25, 26, 28]
     truck3.packages = [2, 3, 5, 7, 8, 9, 10, 12, 18, 27, 33, 35, 36, 38]
 
 
 
-    decideRoute(truck1)
+    #decideRoute(truck1)
 
 
 
@@ -61,7 +62,56 @@ def loadTrucks():
 
 
 
+#Decides the route thet truck will take
+#Since the hub is hard coded, for different cities this would need to be changed
+def decideRoute(truck, distanceMap, hashMap):
 
-def decideRoute(truck):
+    tempHubPackage = package.Package
+    tempHubPackage.address = "4001 South 700 East"
+    closestDelivery = 1000000
+    newDistance = 1000000
+    idTracker = 1000000
+    i = 0
+    i2 = 0
 
-    truck.route.append(0) #start out at the hub. 0 references the hub on the distance table and
+    #Initial distance from HUB
+    while(i < len(truck.packages)):
+
+        #newDistance = distanceBetween(tempHubPackage, hashMap.map[hashMap.lookUp(i)][1], distanceMap)
+        #newDistance = distanceBetween(tempHubPackage, hashMap.lookUp(i)[1], distanceMap)
+        newDistance = distanceBetween(tempHubPackage, hashMap.lookUp(truck.packages[i])[1], distanceMap)
+
+
+        if( newDistance < closestDelivery):
+            closestDelivery = newDistance
+            idTracker = truck.packages[i]
+        i = i + 1
+
+    truck.route.append(idTracker)
+    i = 0
+    closestDelivery = 1000000
+
+
+    #All trips between after inital and before final hub visit
+
+    while(i2 < len(truck.packages) - 1):
+
+        while(i < len(truck.packages)):
+
+            if(truck.packages[i] not in truck.route):
+                
+                #The -1 gives the last item in the list
+                newDistance = distanceBetween(hashMap.lookUp(truck.route[-1])[1], hashMap.lookUp(truck.packages[i])[1], distanceMap)
+
+
+                if( newDistance < closestDelivery):
+                    closestDelivery = newDistance
+                    idTracker = truck.packages[i]
+            i = i + 1
+
+        truck.route.append(idTracker)
+        closestDelivery = 1000000
+        i2 = i2 + 1
+        i = 0
+    
+    print(truck.route)

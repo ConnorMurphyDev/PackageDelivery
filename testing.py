@@ -10,26 +10,24 @@ import truck
 
 
 
-
-
 print("hello everyone")
 
 truck1, truck2, truck3 = truck.loadTrucks()
 
 
-print(truck1.packages)
-
-
-
-
-
-
-
-
-
 testHashMap = packageDataImporter.populateHashMap()
 
 testDistanceTable = cityDataImporter.readCSV()
+
+truck.decideRoute(truck1, testDistanceTable, testHashMap)
+
+truck.decideRoute(truck2, testDistanceTable, testHashMap)
+
+truck.decideRoute(truck3, testDistanceTable, testHashMap)
+
+
+
+
 
 print("butts")
 #print(testHashMap)
