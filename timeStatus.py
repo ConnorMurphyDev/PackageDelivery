@@ -1,17 +1,17 @@
+# Connor Murphy         Student ID:001093925      WGU Data Structures and Algorithms 2 C950
 from hashMap import HashMap
 from datetime import datetime, timedelta
 
 
 
-#deliveredAt function. Set a delivery time for each package. use some sort of time variable so they're easy to compare
-#Alter the decideroute function to keep the total miles at point of delivery. calculate delivery time based of the miles
+#Set a delivery time for each package based off truck travel speed and distance traveled
 def deliveredAt(hashMap, truck1, truck2, truck3):
 
     i = 0
     while(i < hashMap.size):
 
         if(hashMap.map[i]):
-            #Without the departure time added yet, we are adding minutes to the delivery time based on the miles traveled on delivery, since the truck moves at 18MPH
+            #Without the departure time added yet, we are adding minutes to the delivery time
             hashMap.map[i][1].deliveryTime = timedelta(minutes = (18 / hashMap.map[i][1].deliveryMiles * 60))
             i = i + 1
 
@@ -24,15 +24,15 @@ def deliveredAt(hashMap, truck1, truck2, truck3):
         i = i + 1
 
 
-    #Adjusting delivery times for the departure of truck 2, leaves at 9:05AM
+    #Truck 2, leaves at 9:05AM
     i = 0
     while(i < len(truck2.packages)):
         hashMap.lookUp(truck2.packages[i])[1].deliveryTime =  hashMap.lookUp(truck2.packages[i])[1].deliveryTime + timedelta(hours = 9, minutes = 5)
         i = i + 1
 
 
-    #Adjusting delivery times for the departure of truck 3, leaves atfter truck 1 returns
-    #truck 1 return time will be defined as truck 1's final delivery miles converted to minutes plus its departure time
+    #Truck 3, leaves atfter truck 1 returns
+    #Truck 1's return time is it's final delivery miles converted to minutes plus its departure time
     i = 0
     while(i < len(truck3.packages)):
         hashMap.lookUp(truck3.packages[i])[1].deliveryTime =  hashMap.lookUp(truck3.packages[i])[1].deliveryTime + timedelta(hours = 8, minutes = (18 / hashMap.map[i][1].deliveryMiles * 60))
@@ -46,15 +46,14 @@ def deliveredAt(hashMap, truck1, truck2, truck3):
 
 
 
-#deliveryStatus. Returns at hub, en route, or delivered for a single package based on a given time. compare given time to
-# its delivery time. Give each truck a leave time for at hub. Recieves a string in format XX:XX (Hour:minute)
+#Returns delivery status for a single package based on a given time. compare given time to its delivery time.
 def deliveryStatus(givenTime, hashMap, packageId):
 
     #turns the user given time in format XX:XX (Hour:minute) into hour and minute variables
     hour = (int(givenTime[0]) * 10) + int(givenTime[1])
     minute = (int(givenTime[3]) * 10) + int(givenTime[4])
 
-    #if(hashMap.lookUp(packageId)[1].deliveryTime > datetime(year = 0, month = 0, day = 0, hour = hours, minute = minutes)):
+
     if(hashMap.lookUp(packageId)[1].deliveryTime > timedelta(hours = hour, minutes = minute)):
 
         return "   is Out for Delivery"
@@ -69,7 +68,7 @@ def deliveryStatus(givenTime, hashMap, packageId):
 
 
 
-#DeliveryList. Print out to console the status of every package at a given specific time. use delivery status
+#Print out to console the status of every package at a given specific time.
 def deliveryList(givenTime, hashMap):
     i = 0
 
@@ -81,9 +80,7 @@ def deliveryList(givenTime, hashMap):
 
 
 
-#UserInterface. print out each trucks load, its delivery route, miles driven for each truck, total miles
-#Print out asking for a time to check the status for. Then wait for user input. Print out the info using DeliveryList
-#then loop and wait for another input
+#Prints truck info and stats, then wait for user input. Print out the info using DeliveryList
 def userInterface(hashMap, truck1, truck2, truck3):
 
     miles = truck1.mileage + truck2.mileage + truck3.mileage

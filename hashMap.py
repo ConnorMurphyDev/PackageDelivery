@@ -1,23 +1,23 @@
-# Connor Murphy, WGU C950, Data structures and algorithms 2
-# Referencing this:
-# https://www.youtube.com/watch?v=9HFbhPscPU0
+# Connor Murphy         Student ID:001093925      WGU Data Structures and Algorithms 2 C950
 
 import package
 
+
+
+
 class HashMap:
     def __init__(self):
-        self.size = 40 #change this to be adaptive
+        self.size = 40
         self.map = [None] * self.size
 
 
 
 
 
-    """Right now each packageID is just 1,2,3,4,5. add better hash function"""
+    # Extremly basic hash function for storage since daily package list are increments of one, this saves memory, runtime, and confusion to anyone touching up the code
     def makeHash(self, key):
         hashKey = int(key) - 1
         return hashKey
-
 
 
 
@@ -27,14 +27,11 @@ class HashMap:
         hashValue = [key, package]
 
         if self.map[hashKey] is None:
-            #self.map[hashKey] = list([hashValue])
             self.map[hashKey] = hashValue
             return True
         else:
-            print("Ohh shit. How did that happen? This is 1 to 1")
-            #update with collision correction
+            print("Multiple packages with the same ID detected, asses this package visually and contact your supervisor. Package ID's are 1 to 1")
             return False
-
 
 
 

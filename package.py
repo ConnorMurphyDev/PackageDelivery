@@ -1,4 +1,4 @@
-#Connor Murphy
+# Connor Murphy         Student ID:001093925      WGU Data Structures and Algorithms 2 C950
 
 
 
@@ -15,32 +15,3 @@ class Package:
         self.specialNotes = None
         self.deliveryTime = None
         self.deliveryMiles = None
-
-
-
-#Do I need these for python?
-"""
-    def getPackageID(self):
-        return self.packageID
-
-    def getAddress(self):
-        return self.address
-
-    def getPackageID(self):
-        return self.packageID
-
-    def getPackageID(self):
-        return self.packageID
-
-    def getPackageID(self):
-        return self.packageID
-
-    def getPackageID(self):
-        return self.packageID
-
-    def getPackageID(self):
-        return self.packageID
-
-    def getPackageID(self):
-        return self.packageID
-"""

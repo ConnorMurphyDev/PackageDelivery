@@ -1,5 +1,5 @@
-#Connor Murphy
-# Reads package data from a CSV file and populates the hashmap
+# Connor Murphy         Student ID:001093925      WGU Data Structures and Algorithms 2 C950
+#Reads package data from a CSV file and populates the hashmap
 
 import csv
 from hashMap import HashMap
@@ -10,8 +10,7 @@ packageFile = "packageFile.csv"
 
 
 
-
-# Make better variable names?
+#Reads package data
 def readCSV():
     rows = []
     rowCount = 0
@@ -29,14 +28,13 @@ def readCSV():
         for row in csvreader:
             rows.append(row)
   
-        # get total number of rows
         rowCount = csvreader.line_num
 
     return rows, rowCount
 
 
 
-#Call this to populate the hasmap of packages
+#Populates the hasmap with packages
 def populateHashMap():
 
     rows, rowCount = readCSV()
