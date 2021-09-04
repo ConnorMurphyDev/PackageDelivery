@@ -85,7 +85,7 @@ def userInterface(hashMap, truck1, truck2, truck3):
 
     miles = truck1.mileage + truck2.mileage + truck3.mileage
 
-    print("Last delivery made at:            ", str(hashMap.lookUp(truck3.route[-1])[1].deliveryTime).split(".")[0])
+
     print("Total miles driven by all trucks: ", miles)
     print("")
     print("Truck 1 has the packages: ", truck1.packages)
