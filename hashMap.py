@@ -1,8 +1,5 @@
 # Connor Murphy         Student ID:001093925      WGU Data Structures and Algorithms 2 C950
 
-import package
-
-
 
 
 class HashMap:

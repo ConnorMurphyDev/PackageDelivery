@@ -1,14 +1,9 @@
 # Connor Murphy         Student ID:001093925      WGU Data Structures and Algorithms 2 C950
 
-from timeStatus import deliveredAt, deliveryList, userInterface
-from hashMap import HashMap
-import csv
+from timeStatus import deliveredAt, userInterface
 import packageDataImporter
-from graph import Vertex
-import package
 import cityDataImporter
 import truck
-from datetime import datetime, timedelta
 
 
 
@@ -30,16 +25,11 @@ truck.decideRoute(truck3, distanceTable, hashMap)
 
 
 
-# The time each package is delivered is calculated and saved
+# The time each package is delivered is calculated and saved. From timeStatus.py
 deliveredAt(hashMap, truck1, truck2, truck3)
 
 
 
-# Delivery stats are presented and a loop requesting a time for delivery information is started until the user types EXIT
+# Delivery stats are presented and a loop requesting a time for delivery information is started until the user types EXIT. From timeStatus.py
 userInterface(hashMap, truck1, truck2, truck3)
 
-
-
-
-
-#GRAPH IS NOT USED. GET RID OF IT. UPDATE IMPORTS BEFORE SUBMITTING. GET RID OF ROWCOUNT IN CITYDATAIMPORTER

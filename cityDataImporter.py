@@ -11,7 +11,6 @@ distanceFile = "DistanceTable.csv"
 #Reads Distance Table into a 2d accessable list and returns it
 def readCSV():
     rows = []
-    rowCount = 0
 
 
     with open(distanceFile, 'r') as csvfile:
@@ -25,7 +24,6 @@ def readCSV():
             rows.append(row)
   
         # get total number of rows
-        rowCount = csvreader.line_num
 
     return rows
 
