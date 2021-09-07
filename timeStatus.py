@@ -11,7 +11,8 @@ def deliveredAt(hashMap, truck1, truck2, truck3):
 
         if(hashMap.map[i]):
             #Without the departure time added yet, we are adding minutes to the delivery time
-            hashMap.map[i][1].deliveryTime = timedelta(minutes = (18 / hashMap.map[i][1].deliveryMiles * 60))
+            hashMap.map[i][1].deliveryTime = timedelta(minutes = (hashMap.map[i][1].deliveryMiles / 0.3)) # 0.3 is miles per minute, instead of 18 MPH
+
             i = i + 1
 
 
@@ -31,10 +32,9 @@ def deliveredAt(hashMap, truck1, truck2, truck3):
 
 
     #Truck 3, leaves atfter truck 1 returns
-    #Truck 1's return time is it's final delivery miles converted to minutes plus its departure time
     i = 0
     while(i < len(truck3.packages)):
-        hashMap.lookUp(truck3.packages[i])[1].deliveryTime =  hashMap.lookUp(truck3.packages[i])[1].deliveryTime + timedelta(hours = 8, minutes = (18 / hashMap.map[i][1].deliveryMiles * 60))
+        hashMap.lookUp(truck3.packages[i])[1].deliveryTime =  hashMap.lookUp(truck3.packages[i])[1].deliveryTime + hashMap.lookUp(truck1.route[-1])[1].deliveryTime
         i = i + 1
 
 

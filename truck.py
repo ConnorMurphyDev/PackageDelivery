@@ -130,3 +130,14 @@ def decideRoute(truck, distanceMap, hashMap):
     newDistance = distanceBetween(hashMap.lookUp(
         truck.route[-1])[1], tempHubPackage, distanceMap)
     truck.mileage = truck.mileage + newDistance
+
+"""
+While no code or pseudocode was used, quoted, or paraphrased. The Ideas and insperation for this segment was sourced from:
+
+Lawrence, Weru. (2021) Stem Lounge Algorithms for the Traveling Salesman Problem
+https://stemlounge.com/animated-algorithms-for-the-traveling-salesman-problem/
+
+
+Pamela, Fox. (2020) Solving Hard Problems using heuristics
+https://www.khanacademy.org/computing/ap-computer-science-principles/algorithms-101/solving-hard-problems/a/using-heuristics
+"""

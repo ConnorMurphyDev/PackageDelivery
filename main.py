@@ -32,4 +32,3 @@ deliveredAt(hashMap, truck1, truck2, truck3)
 
 # Delivery stats are presented and a loop requesting a time for delivery information is started until the user types EXIT. From timeStatus.py
 userInterface(hashMap, truck1, truck2, truck3)
-
