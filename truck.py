@@ -132,7 +132,7 @@ def decideRoute(truck, distanceMap, hashMap):
     truck.mileage = truck.mileage + newDistance
 
 """
-While no code or pseudocode was used, quoted, or paraphrased. The Ideas and insperation for this segment was sourced from:
+While no code was quoted, or paraphrased. The Ideas and insperation for this segment was sourced from:
 
 Lawrence, Weru. (2021) Stem Lounge Algorithms for the Traveling Salesman Problem
 https://stemlounge.com/animated-algorithms-for-the-traveling-salesman-problem/

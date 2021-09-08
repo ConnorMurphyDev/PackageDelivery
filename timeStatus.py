@@ -34,7 +34,9 @@ def deliveredAt(hashMap, truck1, truck2, truck3):
     #Truck 3, leaves atfter truck 1 returns
     i = 0
     while(i < len(truck3.packages)):
-        hashMap.lookUp(truck3.packages[i])[1].deliveryTime =  hashMap.lookUp(truck3.packages[i])[1].deliveryTime + hashMap.lookUp(truck1.route[-1])[1].deliveryTime
+        #Each packages delivery travel time + Truck 3's return to hub time
+        hashMap.lookUp(truck3.packages[i])[1].deliveryTime =  hashMap.lookUp(truck3.packages[i])[1].deliveryTime + timedelta(hours = 8, minutes = (truck1.mileage / 0.3))
+
         i = i + 1
 
 
