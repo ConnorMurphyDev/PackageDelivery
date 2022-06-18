@@ -1,9 +1,9 @@
-#Connor Murphy
+# Connor Murphy         Student ID:001093925      WGU Data Structures and Algorithms 2 C950
 
 
 
 
-class package:
+class Package:
     def __init__(self):
         self.packageID = None
         self.address = None
@@ -13,32 +13,5 @@ class package:
         self.deliveryDeadline = None
         self.weight = None
         self.specialNotes = None
-
-
-
-#Do I need these for python?
-"""
-    def getPackageID(self):
-        return self.packageID
-
-    def getAddress(self):
-        return self.address
-
-    def getPackageID(self):
-        return self.packageID
-
-    def getPackageID(self):
-        return self.packageID
-
-    def getPackageID(self):
-        return self.packageID
-
-    def getPackageID(self):
-        return self.packageID
-
-    def getPackageID(self):
-        return self.packageID
-
-    def getPackageID(self):
-        return self.packageID
-"""
+        self.deliveryTime = None
+        self.deliveryMiles = None
