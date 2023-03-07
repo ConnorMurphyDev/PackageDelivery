@@ -3,18 +3,14 @@
 
 
 
-SCENARIO
-The Western Governors University Parcel Service (WGUPS) needs to determine an efficient route and delivery distribution for their Daily Local Deliveries (DLD) because packages are not currently being consistently delivered by their promised deadline. The Salt Lake City DLD route has three trucks, two drivers, and an average of 40 packages to deliver each day. Each package has specific criteria and delivery requirements.
-
-Your task is to determine an algorithm, write code, and present a solution where all 40 packages (listed in the attached “WGUPS Package File”) will be delivered on time while meeting each package’s requirements and keeping the combined total distance traveled under 140 miles for both trucks. The specific delivery locations are shown on the attached “Salt Lake City Downtown Map,” and distances to each location are given in the attached “WGUPS Distance Table.” The intent is to use the program for this specific location and also for many other cities in each state where WGU has a presence. As such, you will need to include detailed comments to make your code easy to follow and to justify the decisions you made while writing your scripts.
-
-Keep in mind that the supervisor should be able to see, at assigned points, the progress of each truck and its packages by any of the variables listed in the “WGUPS Package File,” including what has been delivered and at what time the delivery occurred.
+I worked on a traveling salesman problem by developing a mail delivery simulation project. The project involved developing an algorithm and writing code to optimize the delivery of 40 packages in Salt Lake City, Utah, using three trucks and two drivers. The program ensured that all packages were delivered on time while meeting specific delivery requirements, and the combined total distance traveled was kept under 140 miles for both trucks. I also implemented a real-time tracking feature to monitor the progress of each truck and package. The program allowed supervisors to check the status of each package delivery, including whether it had been delivered and at what time. Additionally, the program enabled users to enter any time of the day to see which packages had already been delivered and which ones were still pending. This project helped me improve my problem-solving skills and algorithmic thinking.
 
 
+![Program running with delivery status](https://i.imgur.com/B0xCk80.png "Program running with delivery status")
 
 
+### ASSUMPTIONS
 
-ASSUMPTIONS
 •   Each truck can carry a maximum of 16 packages, and the ID number of each package is unique.
 
 •   The trucks travel at an average speed of 18 miles per hour and have an infinite amount of gas with no need to stop.
